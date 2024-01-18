@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mental_healthstyle.css">
+    <title>Mental Health Tracking</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Tracking</h1>
+        <h2>Attributes</h2>
+        <form id="mentalHealthForm">
+            <label for="mood">Mood:</label>
+            <select id="mood" required>
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="stressed">Stressed</option>
+            </select>
+
+            <label for="sleepDuration">Sleep Duration (hours):</label>
+            <input type="number" id="sleepDuration" required>
+
+            <label for="sleepQuality">Sleep Quality:</label>
+            <select id="sleepQuality" required>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
+            </select>
+
+            <label for="stressReliefActivities">Stress-Relief Activities:</label>
+            <textarea id="stressReliefActivities"></textarea>
+
+            <button type="button" onclick="saveEntry()">Save Entry</button>
+        </form>
+
+        <h2>Options</h2>
+        <button onclick="editEntry()">Edit Entry</button>
+        <button onclick="deleteEntry()">Delete Entry</button>
+    </div>
+    <script src="mental_healthscript.js"></script>
+</body>
+</html>

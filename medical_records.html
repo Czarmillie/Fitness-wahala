@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="medical_recordsstyle.css">
+    <title>Medical Records</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Records</h1>
+        <h2>Attributes</h2>
+        <form id="medicalRecordsForm">
+            <label for="bloodType">Blood Type:</label>
+            <input type="text" id="bloodType" required>
+
+            <label for="allergies">Allergies:</label>
+            <textarea id="allergies"></textarea>
+
+            <label for="medications">Medications:</label>
+            <textarea id="medications"></textarea>
+
+            <label for="appointments">Doctor Appointments:</label>
+            <textarea id="appointments"></textarea>
+
+            <label for="testResults">Test Results:</label>
+            <textarea id="testResults"></textarea>
+
+            <label for="vaccinations">Vaccinations:</label>
+            <textarea id="vaccinations"></textarea>
+
+            <label for="emergencyContacts">Emergency Contacts:</label>
+            <textarea id="emergencyContacts"></textarea>
+
+            <button type="button" onclick="saveEntry()">Save Entry</button>
+        </form>
+
+        <h2>Options</h2>
+        <button onclick="editEntry()">Edit Entry</button>
+        <button onclick="deleteEntry()">Delete Entry</button>
+        <button onclick="setReminder()">Set Reminder</button>
+    </div>
+    <script src="medical_recordsscript.js"></script>
+</body>
+</html>

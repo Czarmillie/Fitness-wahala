@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fitnessstyle.css">
+    <title>Fitness Tracking</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Tracking</h1>
+        <h2>Attributes</h2>
+        <form id="fitnessForm">
+            <label for="exerciseType">Exercise Type:</label>
+            <input type="text" id="exerciseType" required>
+
+            <label for="duration">Duration (minutes):</label>
+            <input type="number" id="duration" required>
+
+            <label for="intensity">Intensity:</label>
+            <input type="text" id="intensity" required>
+
+            <label for="sets">Sets:</label>
+            <input type="number" id="sets" required>
+
+            <label for="reps">Reps:</label>
+            <input type="number" id="reps" required>
+
+            <label for="distance">Distance (optional):</label>
+            <input type="number" id="distance">
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes"></textarea>
+
+            <button type="button" onclick="addWorkout()">Add Workout</button>
+        </form>
+
+        <!-- <div id="success-message" class="hidden">
+            <p>Workout added successfully!</p>
+            <span>&#128077;</span>
+        </div> -->
+
+        <h2>Options</h2>
+        <button onclick="editWorkout()">Edit Workout</button>
+        <button onclick="deleteWorkout()">Delete Workout</button>
+        <button onclick="viewPreviousLogs()">View Previous Logs</button>
+        <!-- <button onclick="viewGraphicalProgress()">View Graphical Progress</button> -->
+    </div>
+    <script src="fitnessscript.js"></script>
+</body>
+</html>
