@@ -5,33 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepagestyle.css">
     <title>App Homepage</title>
-</head> ``
+</head>
 <body>
-    <div class="nav-bar">
+    <header>
         <div class="fit">
             <img src="image/FITNESS WAHALA.jpg" alt="site logo">
         </div>
+        <div class="try-stay-fit">
+            <h1>Try dey stay fit!!! <br>Body fit tell you later</h1>
+        </div>
+    </header>
+    <div class="nav-bar">
         <div class="image-container">
-            <div>
-                <img src="image/pexels-run-ffwpu-2402777.jpg" alt="First Image">
-                <img src="image/pexels-run-ffwpu-2403057.jpg" alt="second image">
+            <div class="picture" onclick="navigateToSection('fitness.html')">
+                <div class="image-overlay"><h2>Fitness</h2></div>
+                <img src="image/pexels-yan-krukau-8436637.jpg" alt="First Image" data-section="fitness">
             </div>
-        </div>
-        <div class="nav-section">
-            <div>
-                <h2 class="Sections">Sections</h2>
+            
+            <div class="picture" onclick="navigateToSection('nutrition.html')">
+                <div class="image-overlay"><h2>Nutrition</h2></div>
+                <img src="image/pexels-jane-doan-1092730.jpg" alt="Second Image" data-section="nutrition">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="fitness.html">Fitness</a></li>
-                    <li><a href="nutrition.html">Nutrition</a></li>
-                    <li><a href="mental_health.html">Mental Health</a></li>
-                    <li><a href="medical_records.html">Medical Records</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                </ul>
-            </nav>
-        </div>
-        
+
+            <div class="picture" onclick="navigateToSection('mental_health.html')">
+                <div class="image-overlay"><h2>Mental Health</h2></div>
+                <img src="image/pexels-cottonbro-studio-4101143.jpg" alt="Third Image" data-section="mental_health">
+            </div>
+
+            <div class="picture" onclick="navigateToSection('medical_records.html')">
+                <div class="image-overlay"><h2>Medical Records</h2></div>
+                <img src="image/pexels-karolina-grabowska-4021775.jpg" alt="Fourth Image" data-section="medical_records">
+            </div>
+
+            <div class="picture" onclick="navigateToSection('profile.html')">
+                <div class="image-overlay"><h2>Profile</h2></div>
+                <img src="image/pexels-ketut-subiyanto-4853028.jpg" alt="Fifth Image" data-section="profile">
+            </div>
+        </div>        
     </div>
     <script src="homepagescript.js"></script>
 </body>

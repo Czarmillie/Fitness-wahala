@@ -2,7 +2,10 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: white;
+    background-image: url(image/pexels-kampus-production-8381747.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
 }
 
 header, main, footer {
@@ -10,7 +13,7 @@ header, main, footer {
 }
 
 .hero {
-    background-color: #f5f5f5;
+    background-color: transparent;
     text-align: center;
 }
 
@@ -29,8 +32,9 @@ header, main, footer {
     font-size: 4rem;
     margin-bottom: 2rem;
 }
-
-
+.container{
+    padding-right: 50px;
+}
 .features {
     display: flex;
     flex-direction: column;
@@ -38,7 +42,6 @@ header, main, footer {
     align-items: center;
     justify-content: center;
 }
-
 img {
     width: 10%;
     height: auto;
@@ -71,6 +74,146 @@ img {
     color: white;
     border: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10% auto;
+    padding: 20px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+.tab.active {
+    background-color: #f1f1f1;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.alert {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.carousel-inner {
+    max-width: 50%;
+    height: auto;
+    margin: auto;
+    float: right;
+    margin-right: -300px;
+    margin-bottom: -2000px;
+}
+.fit{
+    margin-top: -40px;
+    margin-left: -30px;
+    max-width: 2000px;
+    max-height: 300px;
+}
+.moto{
+    color: white;
+    float: left;
+    margin-right: 10px;
+    text-shadow: 50px;
+}
+.carousel-item active{
+    display: flex;
+    flex-direction: column;
+}
+ul.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+ul.tabs li {
+    margin-right: 10px;
+}
+
+ul.tabs li.tab-active a {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+ul.tabs li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul.tabs li a:hover {
+    background-color: green;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

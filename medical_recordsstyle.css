@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to top, teal 0%, turquoise 100%);
+    background: linear-gradient(to right, #00ffff 0%, #ff69b4 100%);
 }
 
 .container {
