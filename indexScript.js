@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var openModalButton = document.getElementById("open-modal-button");
-    var closeModalButton = document.querySelector(".close-modal-button");
-    var modal = document.getElementById("signup-modal");
-    var submitButton = document.getElementById("submit-button");
+    let openModalButton = document.getElementById("open-modal-button");
+    let closeModalButton = document.querySelector(".close-modal-button");
+    let modal = document.getElementById("signup-modal");
+    let signinSubmitButton = document.getElementById("signin-submit-button");
+    let signupSubmitButton = document.getElementById("signup-submit-button");
 
     openModalButton.addEventListener("click", function () {
         modal.style.display = "block";
@@ -15,47 +16,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll(".tabs .tab-active").forEach(function (tab) {
         tab.addEventListener("click", function () {
-            var tabId = this.querySelector("a").getAttribute("href").replace("#", "");
+            let tabId = this.querySelector("a").getAttribute("href").replace("#", "");
             showTab(tabId);
         });
-    });    
+    });
 
-    function showTab(tabId) {
-        document.querySelectorAll(".tab-content").forEach(function (content) {
-            content.classList.remove("active");
-        });
-    
-        document.getElementById(tabId).classList.add("active");
-        document.querySelectorAll(".tab").forEach(function (tab) {
-            tab.classList.remove("active");
-        });
-    
-        document.querySelector('a[href="#' + tabId + '"]').parentElement.classList.add("active");
-    }    
-
-    submitButton.addEventListener("click", function () {
-        var activeTabId = document.querySelector(".tab-content.active").id;
-        var form;
+    signinSubmitButton.addEventListener("click", function () {
+        let activeTabId = document.querySelector(".tab-content.active").id;
+        let form;
 
         if (activeTabId === "signin-tab") {
             form = document.getElementById("signin-form");
             signIn(form);
-        } else if (activeTabId === "signup-tab") {
+        }
+    });
+
+    signupSubmitButton.addEventListener("click", function () {
+        let activeTabId = document.querySelector(".tab-content.active").id;
+        let form;
+
+        if (activeTabId === "signup-tab") {
             form = document.getElementById("signup-form");
             signUp(form);
         }
     });
 
+
+    function showTab(tabId) {
+        document.querySelectorAll(".tab-content").forEach(function (content) {
+            content.classList.remove("active");
+        });
+
+        document.getElementById(tabId).classList.add("active");
+        document.querySelectorAll(".tab").forEach(function (tab) {
+            tab.classList.remove("active");
+        });
+
+        document.querySelector('a[href="#' + tabId + '"]').parentElement.classList.add("active");
+    }    
+
     function signIn(form) {
-        var username = form.querySelector("#signin-username").value;
-        var password = form.querySelector("#signin-password").value;
+        let username = form.querySelector("#signin-username").value;
+        let password = form.querySelector("#signin-password").value;
     
-        var validUsers = [
+        let validUsers = [
             { username: "user1", password: "password1" },
             { username: "user2", password: "password2" },
+            { username: "moscarce", password: "password3" },
         ];
     
-        var isValidUser = validUsers.some(function (user) {
+        let isValidUser = validUsers.some(function (user) {
             return user.username === username && user.password === password;
         });
         form.reset();
@@ -69,14 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function signUp(form) {
-        var fullname = form.querySelector("#signup-fullname").value;
-        var username = form.querySelector("#signup-username").value;
-        var password = form.querySelector("#signup-password").value;
-        var phone = form.querySelector("#signup-phone").value;
+        event.preventDefault();
+        let fullname = form.querySelector("#signup-fullname").value;
+        let username = form.querySelector("#signup-username").value;
+        let password = form.querySelector("#signup-password").value;
+        let phone = form.querySelector("#signup-phone").value;
     
-        var usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
-        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        var phoneRegex = /^\d{11}$/;
+        let usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+        let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        let phoneRegex = /^\d{11}$/;
     
         if (!usernameRegex.test(username)) {
             displayMessage("error", "Invalid username. It must be alphanumeric and between 3 to 16 characters.");
@@ -93,12 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     
-        var validUsers = [
+        let validUsers = [
             { username: "user1", password: "password1", fullname: "User One", phone: "1234567890" },
             { username: "user2", password: "password2", fullname: "User Two", phone: "9876543210" },
+            { username: "daniel", password: "daniel", fullname: "Daniel Olanrewaju", phone: "08166736895"},
+            { username: "esther", password: "esther", fullname: "Esther Aiyeola", phone: "07087982432"},
+            { username: "solomon", password: "solomon", fullname: "Oyefule Solomon", phone: "08167876567"}
         ];
     
-        var isUsernameTaken = validUsers.some(function (user) {
+        let isUsernameTaken = validUsers.some(function (user) {
             return user.username === username;
         });
     
@@ -113,10 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
-    
-    
     function displayMessage(type, message) {
-        var messageElement = document.createElement("div");
+        let messageElement = document.createElement("div");
         messageElement.classList.add("alert", type === "success" ? "alert-success" : "alert-danger");
         messageElement.textContent = message;
 
@@ -126,4 +138,17 @@ document.addEventListener("DOMContentLoaded", function () {
             messageElement.remove();
         }, 3000);
     }
+
+    document.getElementById("signup-submit-button").addEventListener("click", function (event) {
+        let activeTabId = document.querySelector(".tab-content.active").id;
+        let form;
+
+        if (activeTabId === "signup-tab") {
+            form = document.getElementById("signup-form");
+            signUp(form);
+        } else if (activeTabId === "signin-tab") {
+            form = document.getElementById("signin-form");
+            signIn(form);
+        }
+    });
 });
