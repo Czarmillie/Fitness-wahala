@@ -5,8 +5,20 @@ body {
     background-image: url(image/pexels-kampus-production-8381747.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    position: relative;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the desired level of dimness */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
 
 header, main, footer {
     padding: 2rem;

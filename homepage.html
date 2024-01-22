@@ -12,34 +12,47 @@
             <img src="image/FITNESS WAHALA.jpg" alt="site logo">
         </div>
         <div class="try-stay-fit">
-            <h1>Try dey stay fit!!! <br>Body fit tell you later</h1>
+            <h1>Try dey stay fit!!! <br>Body fit tell you later!!!</h1>
         </div>
     </header>
+    <div class="sign-out-button">
+        <button onclick="signOut()">Sign Out</button>
+    </div>
     <div class="nav-bar">
         <div class="image-container">
-            <div class="picture" onclick="navigateToSection('fitness.html')">
-                <div class="image-overlay"><h2>Fitness</h2></div>
-                <img src="image/pexels-yan-krukau-8436637.jpg" alt="First Image" data-section="fitness">
+            <div class="image-wrapper">
+                <div class="picture" onclick="navigateToSection('fitness.html')">
+                    <img src="image/pexels-yan-krukau-8436637.jpg" alt="First Image" data-section="fitness">
+                </div>
+                <button class="text-below-image" onclick="navigateToSection('fitness.html')">Fitness</button>
             </div>
             
-            <div class="picture" onclick="navigateToSection('nutrition.html')">
-                <div class="image-overlay"><h2>Nutrition</h2></div>
-                <img src="image/pexels-jane-doan-1092730.jpg" alt="Second Image" data-section="nutrition">
+            <div class="image-wrapper">
+                <div class="picture" onclick="navigateToSection('nutrition.html')">
+                    <img src="image/pexels-jane-doan-1092730.jpg" alt="Second Image" data-section="nutrition">
+                </div>
+                <button class="text-below-image" onclick="navigateToSection('nutrition.html')">Nutrition</button>
             </div>
 
-            <div class="picture" onclick="navigateToSection('mental_health.html')">
-                <div class="image-overlay"><h2>Mental Health</h2></div>
-                <img src="image/pexels-cottonbro-studio-4101143.jpg" alt="Third Image" data-section="mental_health">
+            <div class="image-wrapper">
+                <div class="picture" onclick="navigateToSection('mental_health.html')">
+                    <img src="image/pexels-cottonbro-studio-4101143.jpg" alt="Second Image" data-section="mental_health">
+                </div>
+                <button class="text-below-image" onclick="navigateToSection('mental_health.html')">Mental Health</button>
             </div>
 
-            <div class="picture" onclick="navigateToSection('medical_records.html')">
-                <div class="image-overlay"><h2>Medical Records</h2></div>
-                <img src="image/pexels-karolina-grabowska-4021775.jpg" alt="Fourth Image" data-section="medical_records">
+            <div class="image-wrapper">
+                <div class="picture" onclick="navigateToSection('medical_records.html')">
+                    <img src="image/pexels-karolina-grabowska-4021775.jpg" alt="Second Image" data-section="medical_records">
+                </div>
+                <button class="text-below-image" onclick="navigateToSection('medical_records.html')">Medical Records</button>
             </div>
 
-            <div class="picture" onclick="navigateToSection('profile.html')">
-                <div class="image-overlay"><h2>Profile</h2></div>
-                <img src="image/pexels-ketut-subiyanto-4853028.jpg" alt="Fifth Image" data-section="profile">
+            <div class="image-wrapper">
+                <div class="picture" onclick="navigateToSection('profile.html')">
+                    <img src="image/pexels-ketut-subiyanto-4853028.jpg" alt="Second Image" data-section="profile">
+                </div>
+                <button class="text-below-image" onclick="navigateToSection('profile.html')">Profile</button>
             </div>
         </div>        
     </div>

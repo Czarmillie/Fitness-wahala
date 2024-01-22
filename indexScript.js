@@ -59,16 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let username = form.querySelector("#signin-username").value;
         let password = form.querySelector("#signin-password").value;
     
-        let validUsers = [
-            { username: "user1", password: "password1" },
-            { username: "user2", password: "password2" },
-            { username: "moscarce", password: "password3" },
-        ];
+        let validUsers = JSON.parse(localStorage.getItem('validUsers')) || [];
     
         let isValidUser = validUsers.some(function (user) {
             return user.username === username && user.password === password;
         });
         form.reset();
+
+        localStorage.setItem('validUsers', JSON.stringify(validUsers));
     
         if (isValidUser) {
             displayMessage("success", "Sign-in successful!");
@@ -104,13 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     
-        let validUsers = [
-            { username: "user1", password: "password1", fullname: "User One", phone: "1234567890" },
-            { username: "user2", password: "password2", fullname: "User Two", phone: "9876543210" },
-            { username: "daniel", password: "daniel", fullname: "Daniel Olanrewaju", phone: "08166736895"},
-            { username: "esther", password: "esther", fullname: "Esther Aiyeola", phone: "07087982432"},
-            { username: "solomon", password: "solomon", fullname: "Oyefule Solomon", phone: "08167876567"}
-        ];
+        let validUsers = JSON.parse(localStorage.getItem('validUsers')) || [];
+
     
         let isUsernameTaken = validUsers.some(function (user) {
             return user.username === username;
@@ -121,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             validUsers.push({ username: username, password: password, fullname: fullname, phone: phone });
             form.reset();
+
+            localStorage.setItem('validUsers', JSON.stringify(validUsers));
     
             displayMessage("success", "Sign-up successful!");
             window.location.href = "homepage.html";

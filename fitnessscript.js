@@ -2,7 +2,16 @@ if (!localStorage.getItem('workoutData')) {
     localStorage.setItem('workoutData', JSON.stringify([]));
 }
 
-function addWorkout() {
+function toggleOverlay() {
+    const overlay = document.querySelector('.overlay');
+    const generatedWorkout = document.getElementById('generated-workout');
+
+    overlay.classList.toggle('active');
+    
+    generatedWorkout.classList.toggle('active');
+}
+
+async function addWorkout() {
     const exerciseType = document.getElementById('exerciseType').value;
     const duration = document.getElementById('duration').value;
     const intensity = document.getElementById('intensity').value;
@@ -41,12 +50,59 @@ function addWorkout() {
 
     alert('Workout added successfully!');
 
+    try {
+        const workoutPlan = await fetchWorkoutPlan();
+        console.log('Generated Workout Plan:', workoutPlan);
+
+        displayWorkoutPlan(workoutPlan);
+    } catch (error) {
+        console.error('Error fetching workout plan:', error);
+    }
+
     document.getElementById('success-message').classList.remove('hidden');
 
     setTimeout(function () {
         document.getElementById('success-message').classList.add('hidden');
     }, 3000);
+
+    setTimeout(async function () {
+        try {
+            const workoutPlan = await fetchWorkoutPlan();
+            console.log('Generated Workout Plan:', workoutPlan);
+
+            toggleOverlay();
+
+           } catch (error) {
+            console.error('Error fetching workout plan:', error);
+        }
+    }, 3000);
 }
+
+function displayWorkoutPlan(workoutPlan) {
+    const workoutPlanSection = document.getElementById('workoutPlanSection');
+    const workoutPlanContent = document.getElementById('workoutPlanContent');
+
+    workoutPlanContent.innerHTML = `<pre>${JSON.stringify(workoutPlan, null, 2)}</pre>`;
+    workoutPlanSection.classList.remove('hidden');
+}
+
+
+async function fetchWorkoutPlan() {
+    const apiUrl = 'https://zylalabs.com/api/2113/ai+workout+planner+api/1906/get+workout+plan';
+    
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`API request failed with status ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching workout plan:', error.message);
+    }
+}
+
 
 function editWorkout() {
     const workoutId = prompt('Enter the ID of the workout to edit:');

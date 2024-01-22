@@ -12,8 +12,48 @@
         <h2>Attributes</h2>
         <form id="fitnessForm">
             <label for="exerciseType">Exercise Type:</label>
-            <input type="text" id="exerciseType" required>
-
+            <select id="exerciseType" required>
+                <option value="option1">Running</option>
+                <option value="option2">Cycling</option>
+                <option value="option2">Swimming</option>
+                <option value="option2">Jumping Jacks</option>
+                <option value="option2">Squats</option>
+                <option value="option2">Deadlifts</option>
+                <option value="option2">Bench Press</option>
+                <option value="option2">Biceps Curls</option>
+                <option value="option2">Triceps Dips</option>
+                <option value="option2">Push-Ups</option>
+                <option value="option2">Pull-Ups</option>
+                <option value="option2">Lunges</option>
+                <option value="option2">Planks</option>
+                <option value="option2">Burpees</option>
+                <option value="option2">Yoga Poses</option>
+                <option value="option2">Pilates</option>
+                <option value="option2">Stretching</option>
+                <option value="option2">Foam Rolling</option>
+                <option value="option2">Crunches</option>
+                <option value="option2">Russian Twists</option>
+                <option value="option2">Leg Raises</option>
+                <option value="option2">Bicycle Crunches</option>
+                <option value="option2">Plank Variations</option>
+                <option value="option2">Kettlebell Swings</option>
+                <option value="option2">Battle Ropes</option>
+                <option value="option2">Box Jumps</option>
+                <option value="option2">Single-Leg Stands</option>
+                <option value="option2">Tai Chi</option>
+                <option value="option2">Balance Board Exercises</option>
+                <option value="option2">Cone Drills</option>
+                <option value="option1">Shuttle Runs</option>
+                <option value="option1">Box Drills</option>
+                <option value="option1">Wall Balls</option>
+                <option value="option1">Double-Unders (Jump Rope)</option>
+                <option value="option1">Clean and Jerk</option>
+                <option value="option1">Karate Kicks</option>
+                <option value="option1">Taekwondo Patterns</option>
+                <option value="option1">Brazilian Jiu-Jitsu Techniques</option>
+                <option value="option1">Muay Thai Clinch Work</option>
+                <option value="option1">Capoeira Moves</option>
+            </select>
             <label for="duration">Duration (minutes):</label>
             <input type="number" id="duration" required>
 
@@ -50,8 +90,14 @@
         <button onclick="editWorkout()">Edit Workout</button>
         <button onclick="deleteWorkout()">Delete Workout</button>
         <button onclick="viewPreviousLogs()">View Previous Logs</button>
-        <!-- <button onclick="viewGraphicalProgress()">View Graphical Progress</button> -->
     </div>
+    <div class="overlay" onclick="toggleOverlay()"></div>
+    <div id="generated-workout">
+        <div id="workoutPlanSection">
+            <div id="workoutPlanContent"></div>
+        </div>
+    </div>
+
     <script src="fitnessscript.js"></script>
 </body>
 </html>
